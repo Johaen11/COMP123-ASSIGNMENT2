@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP123_Assignment2
 {
-    public class Hero
+    public class Hero 
     {
         //Private Instance Variables
         private int _strength;
@@ -14,15 +14,18 @@ namespace COMP123_Assignment2
         private int _health;
         private string _name;
 
+
+        //Public Property+++++++++++++++++++
         public string Name
         {
             get
             {
-                return _name;
+                return this._name;
             }
+
             set
             {
-                _name = value;
+               this._name = value;
             }
 
         }
@@ -30,7 +33,7 @@ namespace COMP123_Assignment2
         private void _generateAbilities()
         {
             Random rnd = new Random();
-            _strength = rnd.Next(1, 101);
+            this._strength = rnd.Next(1, 101);
             _speed = rnd.Next(1, 101);
             _health = rnd.Next(1, 101);
         }
@@ -77,6 +80,7 @@ namespace COMP123_Assignment2
 
 
         }
+        //
         public Hero(string name)
         {
             _name = name;

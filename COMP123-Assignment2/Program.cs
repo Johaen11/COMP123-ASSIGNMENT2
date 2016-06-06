@@ -19,6 +19,11 @@ namespace COMP123_Assignment2
             Hero hero = new Hero("Johaen");
             hero.Show();
             hero.Fight();
+
+            Console.WriteLine();
+
+            SuperHero superHero = new SuperHero("Dave");
+            superHero.Show();
         }
     }
 }
