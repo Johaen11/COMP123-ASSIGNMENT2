@@ -6,14 +6,28 @@ using System.Threading.Tasks;
 /**
  * Author's Name: Johaen Gnanakumar
  * Author's Student#:300880309
- * Date Last Modified:05/28/2016
- * Program Description:
- * Revision History: Version 0.06
+ * Date Last Modified:06/06/2016
+ * Program Description:This program 
+ * Revision History: Version 0.0.8
  */
 namespace COMP123_Assignment2
 {
+  /*
+   * This class is the "driver" class for my program
+   * 
+   * @class program
+   */ 
+    
+   
     class Program
     {
+        /*
+         * The main method for our driver class program
+         * 
+         * @method Main
+         * @param {string[]} args
+         */  
+         
         static void Main(string[] args)
         {
             Hero hero = new Hero("Johaen");
@@ -22,8 +36,9 @@ namespace COMP123_Assignment2
 
             Console.WriteLine();
 
-            SuperHero superHero = new SuperHero("Dave");
+            SuperHero superHero = new SuperHero("Johaen");
             superHero.Show();
+            superHero.ShowPower();
         }
     }
 }

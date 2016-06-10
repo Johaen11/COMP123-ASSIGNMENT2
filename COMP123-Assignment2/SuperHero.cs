@@ -6,47 +6,114 @@ using System.Threading.Tasks;
 
 namespace COMP123_Assignment2
 {
+    /**
+     * This Class defines a SuperHero Class
+     * 
+     * @Class SuperHero
+     * @field {string}_superPowers
+     * 
+     */ 
     class SuperHero : Hero
     {
+        //PRIVATE INSTANCE VARIABLES++++++++++++++++++++++++++++++++++++++++++++++++++++
         string[] _superPowers = new string[3];
+        List<string> SuperPower = new List<string>();
+        
+
+
+        //PUBLIC PROPERTIES++++++++++++++++++++++++++++++++++++++++++
+        /**
+         * 
+         * <summary>
+         * this is a public property for our private_superPowers field
+         * </summary>
+         * 
+         */ 
+        public string SuperPowers
+        {
+            get
+            {
+                return this._superPowers[3];
+            }
+
+            set
+            {
+                this._superPowers[3]= value;
+            }
+        }
+        
+        // CONSTRUCTORS++++++++++++++++++++++
+        /**
+         * <summary>
+         * This is the constructor for the SuperHero class
+         * </summary>
+         * 
+         * 
+         */ 
 
         public SuperHero(string name):base(name)
         {
             _generateRandomPowers();
         }
-        /*A	private _generateRandomPowers	Method	randomly	
-         * generates	three	random	superpowers	from	
-         * the	following	list	of	6	powers	
-         * (hint:	create	a	loop	that	picks	from	
-         * the	power	list	three	times.	Note:	Make	
-         * sure	the	resulting	private	_superPowers	array	
-         * does	not	contain	any	duplicate	powers).	
-         * The	_generateRandomPowers	Method	assigns	the	randomly
-         * 	generated	powers	to	the	private	_superPowers	
-         * 	array	(7	Marks:	Functionality):
-         * 		1. Super Speed	2. Super Strength	3. Body	Armour	4. Flight	5. Fire	Generation	6. Weather	Control   	e. A	public ShowPowers	Method	that	will	display	the	Hero’s	super	powers	to	the	console.	Please	ensure	that	the	output	is	pretty	(3	Marks:	Functionality).	2
-         */
+        
+        //PUBLIC METHODS+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+            /**
+             * <summary>
+             * This method generates random powers using a list,for loop and a foreach loop
+             * 
+             *
+             * </summary>
+             * 
+             * @methods _generateRandomPowers
+             * @returns void
+             * 
+             * 
+             */ 
         private void _generateRandomPowers()
         {
-            List<string> superPowers = new List<string>();
-            superPowers.Add("Super Speed");
-            superPowers.Add("Super Strength");
-            superPowers.Add("Body Armour");
-            superPowers.Add("Flight");
-            superPowers.Add("Fire Generation");
-            superPowers.Add("Weather Control");
+            List<string> randomPowers = new List<string>();
+            randomPowers.Add("Super Speed");
+            randomPowers.Add("Super Strength");
+            randomPowers.Add("Body Armour");
+            randomPowers.Add("Flight");
+            randomPowers.Add("Fire Generation");
+            randomPowers.Add("Weather Control");
 
             Random rnd = new Random();
 
-            for (int i = 0; i < 3; i++)
+            for (int counter = 0; counter < 3; counter++)
             {
-                int randomNum = rnd.Next(0, superPowers.Count);
+                int randomNum = rnd.Next(0, randomPowers.Count);
 
-                _superPowers[i] = superPowers.ElementAt(randomNum);
-                superPowers.RemoveAt(randomNum);
-                Console.WriteLine(_superPowers[i]);
+                _superPowers[counter] = randomPowers.ElementAt(randomNum);
+                randomPowers.RemoveAt(randomNum);
+                
             }
             Console.WriteLine();
+
+            foreach (string power in _superPowers)
+            {
+                SuperPower.Add(power);
+            }
+        }
+
+        /**
+         * <summary>
+         * 
+         * This method outputs the power using a foreach statement
+         * </summary>
+         * 
+         * @method ShowPower
+         * @returns void
+         */ 
+        public void ShowPower()
+        {
+            foreach (string power in SuperPower)
+            {
+                Console.WriteLine(power);
+            }
+            
         }
     }
 }
